@@ -75,6 +75,7 @@ int main() {
     printf("Performing warm-up runs...\n");
     for (int i = 0; i < 3; i++) {
         vector_add_cpu(h_a, h_b, h_c_cpu, N);
+        // [num_blocks, 1, 1], [BLOCK_SIZE, 1, 1] (see v2 for a 3D example)
         vector_add_gpu<<<num_blocks, BLOCK_SIZE>>>(d_a, d_b, d_c, N);
         cudaDeviceSynchronize();
     }
