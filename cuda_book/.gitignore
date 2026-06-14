@@ -16,3 +16,6 @@
 __pycache__
 
 !Makefile
+
+*.nsys-rep
+*.sqlite
